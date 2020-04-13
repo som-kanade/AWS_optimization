@@ -8,4 +8,5 @@ snapshots=ec2_client.describe_snapshots(OwnerIds=['self'])['Snapshots']
 oldest_date = datetime.now(pytz.utc) - timedelta(days=1)
 for snaps in snapshots:
     if(snaps['StartTime'] < oldest_date):
-        print(snaps['SnapshotId'])
+         print(snaps['SnapshotId'], 'has volume of', snaps['VolumeSize'])
+        #print(snaps['SnapshotId'])
